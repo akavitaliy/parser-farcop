@@ -15,7 +15,7 @@ def table(target)
     rows = []
     split_rows = []
     table.each {|row| rows << row.text.strip}    
-    arr.each {|item| split_rows << item.strip.split(':')}
+    rows.each {|item| split_rows << item.strip.split(':')}
     return split_rows.to_h
 end 
 
