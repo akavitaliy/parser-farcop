@@ -12,13 +12,11 @@ file = File.open("link_list.txt")
 
 def table(target)
     table = target.at(".towbar-item-properties").search("dl.towbar-item-properties__item")
-    arr = []
-    arr2 = []
-    table.each do |row|
-        arr << row.text.strip
-    end    
-    arr.each {|item| arr2 << item.strip.split(':')}
-    return arr2.to_h
+    rows = []
+    split_rows = []
+    table.each {|row| rows << row.text.strip}    
+    arr.each {|item| split_rows << item.strip.split(':')}
+    return split_rows.to_h
 end 
 
 
